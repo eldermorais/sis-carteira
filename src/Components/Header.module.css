@@ -1,0 +1,44 @@
+header {
+    z-index: 2;
+    background-color: #0051ff;
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+}
+
+nav {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    height: 100%;
+    justify-content: left;
+}
+
+a {
+    margin-right: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+a:hover {
+    color: #e2e600;
+}
+.containerLogo {
+    height: 40px;
+  
+
+}
+a.containerLogo {
+    display: flex;
+    align-items: center;
+    color:  #fff;
+
+
+}
+
+.logo {
+    width: auto;
+    height: 100%;
+}
