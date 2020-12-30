@@ -1,3 +1,10 @@
 .dvHome {
     height: 79.6vh;
 }
+p{
+    border: none;
+}
+
+.dvHome h3{
+    margin: 10px 0;
+}

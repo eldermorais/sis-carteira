@@ -1,12 +1,10 @@
 import React from 'react'
 import styles from './Users.module.css'
-import { Link } from 'react-router-dom'
-import { Foto } from './Foto'
+import { Print } from './Print'
 
 
 export const Users = (props) => {
-    const date = Date.now()
-    
+    const date = Date.now()    
 
     const initialState = {
         cpf:'',
@@ -28,6 +26,7 @@ export const Users = (props) => {
         const {id, value } = target;
         setUser({ ...user, [id]:value})
     }
+
     function getUser(){
         if(testaCPF() === false){
             alert('O CPF digitado não é válido!!!')
@@ -43,7 +42,6 @@ export const Users = (props) => {
         }        
     }
     
-
     function handleSubmit(event) {
         event.preventDefault()
         const baseUrl = 'http://localhost:3001/users/'
@@ -51,7 +49,6 @@ export const Users = (props) => {
         const url = user.id ? baseUrl + user.id : baseUrl
         const modal = document.getElementById('div-modal')
         const btnFechar = document.getElementById('btn-fechar')
-
        
         fetch(url, {
             method: method,
@@ -65,12 +62,9 @@ export const Users = (props) => {
                 setUser(initialState)
             modal.style.display='block'
             btnFechar.focus()
-            }
-            
-            return response 
-                       
-        })
-               
+            }            
+            return response                        
+        })               
     }
 
     function closeModal() {
@@ -114,19 +108,26 @@ export const Users = (props) => {
         }).then((data) =>{
             setUser({ ...user, logradouro: data.logradouro, bairro: data.bairro, localidade: data.localidade, uf: data.uf});            
         })
-    }    
+    }
+
+    function imprimir(e){
+        e.preventDefault()
+        const modalImprimir = document.querySelector('#print')
+        modalImprimir.style.display = 'block'
+        window.print();
+    }
 
     return (
             
             <div className={`${styles.Users} container mt-5`}>
-                
+
             <div>
                 <h1>{props.title}</h1>
             </div>
             <form onSubmit={handleSubmit}>
                
                 <div className="row">
-                <Foto />
+                <Print users={user} />
                     <div className="col-12 col-md-6">
                         <div className="form-group">
                             <label>CPF</label>
@@ -269,17 +270,17 @@ export const Users = (props) => {
                             onClick={clear}>
                             Cancelar
                         </button>
-                        <Link to="/print" className='btn btn-info ml-2'>Imprimir</Link>
+                        <button className='btn btn-info ml-2' onClick={imprimir}>Imprimir</button>
 
                     </div>
                 </div>
             </form>
             <div className={styles.modal2} id="div-modal">
-                    <div className={styles.modalContent}>
-                        <span className={styles.textModal}>Formulario enviado com sucesso!</span>
-                        <button id="btn-fechar" onClick={closeModal} className={`${styles.btnModal} btn btn-success`}>fechar</button>                        
-                    </div>
+                <div className={styles.modalContent}>
+                    <span className={styles.textModal}>Formulario enviado com sucesso!</span>
+                    <button id="btn-fechar" onClick={closeModal} className={`${styles.btnModal} btn btn-success`}>fechar</button>                        
                 </div>
+            </div>            
         </div>
     )
 }

@@ -1,0 +1,95 @@
+.dvFoto{
+    /* position: absolute;
+    top: 15%;
+    left: 2%; */
+    width: 100px;
+    height: 140px;
+    border: solid 1px rgb(189, 189, 189);
+    border-radius: .3rem;
+    display: block;
+    background-image: url('../assets/icon-photo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.escolher_imagem {
+    margin: 5px 0 20px 0;
+    width: 100px;
+}
+
+.printCard{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.cardContent{
+    background-color: #fff;
+    margin: 0 auto;
+    width: 155px;
+    height: 237px;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    font-size: 0.5rem;
+}
+
+.headerCard{
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.logoFunad{
+    width: 40px;
+    margin: 5px 0 0 7px;
+}
+
+.fotoCard{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.printCard p{
+    border: solid 1px rgb(148, 148, 148);
+    border-radius: 0.5rem;
+    padding: 2px;
+    margin: 1px;
+}
+
+.divFoto{
+    display: flex;
+}
+
+.printCard h1{
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+.cabecalho{
+    text-align: center;
+    margin: 1px 0;
+}
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    .cardContent, .cardContent * {
+      visibility: visible;
+    }
+    .cardContent {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
