@@ -53,3 +53,15 @@ form {
 
 }
 
+@media(max-width: 450px){
+    .modalContent{
+        width: 90vw;
+    }
+
+    .btnModal{
+        position: absolute;
+        top: 15%;
+        left: 75%;
+        
+    }
+}

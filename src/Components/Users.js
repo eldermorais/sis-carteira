@@ -31,7 +31,7 @@ export const Users = (props) => {
         if(testaCPF() === false){
             alert('O CPF digitado não é válido!!!')
         }else{
-            fetch('http://localhost:3001/users/?cpf='+user.cpf)
+            fetch(process.env.REACT_APP_API_URL +'?cpf='+user.cpf)
         .then((response) => {
             return response.json()        
         }).then((datas) =>{
@@ -44,7 +44,7 @@ export const Users = (props) => {
     
     function handleSubmit(event) {
         event.preventDefault()
-        const baseUrl = 'http://localhost:3001/users/'
+        const baseUrl = process.env.REACT_APP_API_URL
         const method = user.id ? 'PUT' : 'POST'
         const url = user.id ? baseUrl + user.id : baseUrl
         const modal = document.getElementById('div-modal')
