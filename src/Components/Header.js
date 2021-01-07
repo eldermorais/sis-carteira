@@ -11,10 +11,12 @@ export const Header = () => {
 
             <Link className={styles.containerLogo} to="/">
                 <Logo className={styles.logo}/>SisCarteira
-                </Link>
+            </Link>
+            <div className="nav ml-auto">
             <Link to="/users">Usuários</Link>  
             <Link to="/users">Relatórios</Link>
-            {/* <Link to="/print"></Link> */}
+            <Link to="/login">Login/Register</Link>
+            </div>
             </nav>
         </header>
     )

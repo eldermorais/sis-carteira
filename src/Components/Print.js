@@ -31,7 +31,7 @@ export const Print = (props) => {
             <div className={`${styles.Foto} ${styles.dvFoto} d-flex justify-content-center`}>
                 
                 <input id="input_image" accept="image/*" type="file" hidden onChange={handleChangef}/>
-                <img src={foto.image} alt="foto do usuário"/>
+                <img className="img-fluid" src={foto.image} alt="foto do usuário"/>
             </div>
             <label htmlFor="input_image" className={`${styles.escolher_imagem} btn btn-danger d-flex align-self-end `}>Escolher</label>
 

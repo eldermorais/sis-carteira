@@ -1,0 +1,12 @@
+.linkRegister{
+    color: rgb(17, 0, 255);
+    
+}
+
+.linkRegister:hover{
+    color: rgb(19, 0, 124);
+
+}
+body{
+    height: 100%;
+}

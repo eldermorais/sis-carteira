@@ -119,10 +119,10 @@ export const Users = (props) => {
 
     return (
             
-            <div className={`${styles.Users} container mt-5`}>
+            <div className={`${styles.Users} container pt-5`}>
 
             <div>
-                <h1>{props.title}</h1>
+                <h1 className="pt-5">{props.title}</h1>
             </div>
             <form onSubmit={handleSubmit}>
                
