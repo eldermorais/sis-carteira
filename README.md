@@ -1,13 +1,13 @@
 # Sis_Carteira
 
-Projeto feito visando o aprendizado do ReactJs ultilizando a Ultilizando componnentes funcionais e alguns hooks.
+Projeto feito visando o aprendizado do ReactJs ultilizando componentes funcionais e alguns hooks.
 
 ### :man_technologist: As tecnologias utilizadas foram:
 
-* React Native Cli;
+* ReactJs;
 * Javascript;
 * Hooks
-* Styled-Componenst
+* CSS Modules
 <br />
 
 ## Instalação
