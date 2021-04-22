@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import {Footer} from './Components/Footer';
-import { Header } from './Components/Header';
-import { Home } from './Components/Home';
-import { Users } from './Components/Users';
-import { Login } from './Components/Login';
-import { Resgister } from './Components/Resgister';
+import {Footer} from './components/Footer';
+import { Header } from './components/Header';
+import { Home } from './pages/Home';
+import { Users } from './pages/Users';
+import { Login } from './pages/Login';
+import { Resgister } from './pages/Resgister';
 
 
 function App() {

@@ -1,4 +1,4 @@
-header {
+/* header {
     z-index: 2;
     background-color: #0051ff;
     width: 100%;
@@ -14,9 +14,9 @@ nav {
     align-items: center;
     height: 100%;
     justify-content: left;
-}
+} */
 
-a {
+/* a {
     margin-right: 20px;
     font-weight: 600;
     color: #FFFFFF;
@@ -24,9 +24,9 @@ a {
 
 a:hover {
     color: #e2e600;
-}
+} */
 .containerLogo {
-    height: 40px;
+    height: 50px;
   
 
 }
@@ -34,6 +34,7 @@ a.containerLogo {
     display: flex;
     align-items: center;
     color:  #fff;
+    font-weight: 700;
 
 
 }
@@ -42,3 +43,4 @@ a.containerLogo {
     width: auto;
     height: 100%;
 }
+

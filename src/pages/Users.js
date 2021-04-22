@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Users.module.css'
-import { Print } from './Print'
+import { Print } from '../components/Print'
+import { testaCPF } from '../utils/utils'
 
 
 export const Users = (props) => {
@@ -28,7 +29,7 @@ export const Users = (props) => {
     }
 
     function getUser(){
-        if(testaCPF() === false){
+        if(testaCPF(user.cpf) === false){
             alert('O CPF digitado não é válido!!!')
         }else{
             fetch(process.env.REACT_APP_API_URL +'?cpf='+user.cpf)
@@ -76,28 +77,7 @@ export const Users = (props) => {
         event.preventDefault()
         setUser(initialState)
     }
-    
-    function testaCPF(strCPF) {
-        var Soma;
-        var Resto;
-        Soma = 0;
-        strCPF = user.cpf
-      if (strCPF.length !== 11 || strCPF === "00000000000" || strCPF === "11111111111" || strCPF === "22222222222" || strCPF === "33333333333" || strCPF === "44444444444" || strCPF === "55555555555" || strCPF === "66666666666" || strCPF === "77777777777" || strCPF === "88888888888" || strCPF === "99999999999") return false;
-    
-      for (let i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
-      Resto = (Soma * 10) % 11;
-    
-        if ((Resto === 10) || (Resto === 11))  Resto = 0;
-        if (Resto !== parseInt(strCPF.substring(9, 10)) ) return false;
-    
-      Soma = 0;
-        for (let i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
-        Resto = (Soma * 10) % 11;
-    
-        if ((Resto === 10) || (Resto === 11))  Resto = 0;
-        if (Resto !== parseInt(strCPF.substring(10, 11) ) ) return false;
-        return true;
-    }
+
 
     function buscarCep(){
         let baseUrlCep = 'https://viacep.com.br/ws/'
@@ -122,7 +102,7 @@ export const Users = (props) => {
             <div className={`${styles.Users} container pt-5`}>
 
             <div>
-                <h1 className="pt-5">{props.title}</h1>
+                <h1>{props.title}</h1>
             </div>
             <form onSubmit={handleSubmit}>
                

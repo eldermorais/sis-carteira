@@ -1,0 +1,29 @@
+.dvHome {
+    height: 400px;
+}
+p{
+    border: none;
+}
+
+.dvHome h3{
+    margin: 10px 0;
+}
+
+.homeImage{
+    width: 300px;
+    height: 300px;
+}
+
+@media(max-width: 700px){
+    
+    .dvHome h1, h2, h3{
+        font-size: 1.1rem;
+    }
+
+    .homeImage{
+        position: absolute;
+        z-index: -1;
+        opacity: 0.1;
+
+    }
+}
